@@ -1,7 +1,9 @@
 # group id (in LEB2): c12_thu09
 # filename: c12_thu09_student.py
-# 000 firstname lastname
-# 999 firstname lastname
+# 081 Thanakorn Chareonlertkamol
+# 095 Bannawit Sanngern
+# 129 Napat Adam
+# 130 Natthawat Suwansupawong
 
 # change this imperative programming style 
 # to object-oriented programming style 
