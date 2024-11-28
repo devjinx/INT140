@@ -4,7 +4,6 @@
 # 095 Bannawit Sanngern
 # 129 Napat Adam
 # 130 Natthawat Suwansupawong
-
 # change this imperative programming style 
 # to object-oriented programming style 
 # submission deadline: before midnight of Sun 10 Nov 2024
