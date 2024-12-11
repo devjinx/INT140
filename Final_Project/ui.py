@@ -26,17 +26,44 @@ class RestaurantUI:
     def calculate_order(self):
         self.display_menu()
 
-        print("\nEnter the quantities for the items by their numbers:")
         items = list(self.menu.get_menu().items())
         order = {}
 
-        for index, (item_name, price) in enumerate(items, start=1):
+        if items == []:
+            return
+        print("\nChoose your menu")
+
+
+        while True:
+
             try:
-                quantity = int(input(f"Quantity for {index}. {item_name}: "))
-                if quantity > 0:
-                    order[item_name] = quantity
+                choice = int(input(f"Enter number of item (0 = finish):"))   
+
+
+                if choice == 0:
+                    break
+                elif 1<= choice <= len(self.menu.get_menu()):
+                    item_name = items[choice-1][0]
+                    quantity = int(input(f"Quantity for {item_name} :"))
+
+                    if quantity > 0:
+                        if item_name in order:
+                            order[item_name] += quantity
+                        else:
+                            order[item_name] = quantity
+                        print(f'---add {quantity} {item_name} to order--- ')
+                    else:
+                        print("quantity must be positive number")
+
+                else:
+                    print("Invalid item number. Please try again.")
+
+                    
             except ValueError:
-                print("Invalid input. Please enter a valid number.")
+                print("Invalid input. Please enter a number.")
+
+
+
 
         try:
             total = Calculator.calculate_total_with_quantity(order, self.menu.get_menu())
